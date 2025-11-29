@@ -1,10 +1,193 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+
 <head>
-    <title> Rentique </title>
+    <title>Rentique</title>
+    
+    <!-- Link to the stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="images" href="images/logo.png">
 </head>
 <body>
-    <h1>Welcome to Rentique</h1>
-    <h2>
-        Hello Customers
-    </h2>
+    <!-- Header / top navigation -->
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <div class="logo">
+                <a href="#" class="logo">
+                <img src="images/logo.png" alt="Rentique">  </a>Rentique
+            </div>
+
+            <div class="site-search">
+                <input type="text" placeholder="search for items"/>
+            </div>
+
+            <nav class="main-nav">
+                
+                <a href="#">Log In/Sign Up</a>
+                <a href="#">Home</a>
+                <a href="#">Products</a>
+                <a href="#">Shopping Cart</a>
+                <a href="#">Support</a>
+                <a href="#">About Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Pink tagline band -->
+    <section class="tagline">
+        <div class="container">
+            <h1>Wear It. Love It. Return It.</h1>
+        </div>
+    </section>
+
+    <!-- Intro / hero area -->
+    <main>
+        <section class="hero container">
+            <div class="hero-text">
+                <h2><em>Rentique</em></h2>
+                <p class="intro">
+                    A rental-based e-commerce website for designer dresses, bridal suits, wedding shoes and jewelry like
+                    necklaces, rings and bridal jewellery set. It targets brides and grooms who want stylish outfits for
+                    marriages without buying them.
+                </p>
+                <a class="btn" href="#">Shop Now</a>
+            </div>
+
+            <div class="hero-images">
+                <!-- Replace these images with your own images placed inside images/ folder -->
+                <!-- <img src="jewellery.jpg" alt="Bridal dress" class="hero-left" /> -->
+                <img src="images/bridaldress.jpeg" alt="Jewellery" class="hero-right" />
+                <img src="images/pearl-white-classic-sherwani-with-sequins.jpg" alt="Jewellery" class="hero-right" />
+                <img src="images/whitebridal.jpg" alt="Jewellery" class="hero-right" />     
+            </div>
+        </section>
+
+        <!-- Our Best Picks -->
+        <section class="best-picks container">
+            <h3>Our Best Picks</h3>
+
+            <div class="products-grid">
+                <!-- Product card -->
+                <div class="product-card">
+                    <img src="images/jewelleryy.jpeg" alt="Product 1">
+                    <div class="prod-title">Golden Bridal Jewellery Set</div>
+                    <div class="prod-price">Rs 3,500</div>
+                    <button class="btn small">Select Options</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/shoes.jpg" alt="Product 2">
+                    <div class="prod-title">Red Bridal Shoes</div>
+                    <div class="prod-price">Rs 2,500</div>
+                    <button class="btn small">Select Options</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/zuria-dor-rust-bridal-lehenga-choli-1.jpg" alt="Product 3">
+                    <div class="prod-title">Golden Bridal Set</div>
+                    <div class="prod-price">Rs 75,000</div>
+                    <button class="btn small">Select Options</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/groom.jpg" alt="Product 4">
+                    <div class="prod-title">Golden Groom Set</div>
+                    <div class="prod-price">Rs 35,000</div>
+                    <button class="btn small">Select Options</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/bridaldress.jpeg" alt="Product 5">
+                    <div class="prod-title">Red Bridal Set</div>
+                    <div class="prod-price">Rs 75,000</div>
+                    <button class="btn small">Select Options</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/whitesherwani.jpg" alt="Product 6">
+                    <div class="prod-title">White Sherwani</div>
+                    <div class="prod-price">Rs 35,000</div>
+                    <button class="btn small">Select Options</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Style Quiz Assistant -->
+        <section class="quiz container">
+            <h3>Style Quiz Assistant</h3>
+
+            <form class="quiz-form">
+                <label>What type of event are you attending?</label>
+                <select>
+                    <option selected>Select Option</option>
+                    <option>Wedding (Bride)</option>
+                    <option>Wedding (Groom)</option>
+                    <option>Reception</option>
+                    <option>Formal Party</option>
+                </select>
+
+                <label>What's your preferred color or style?</label>
+                <select>
+                    <option selected>Select Option</option>
+                    <option>Pastel</option>
+                    <option>Bold</option>
+                    <option>Traditional</option>
+                    <option>Minimal</option>
+                </select>
+
+                <label>Do you prefer modern or traditional looks?</label>
+                <select>
+                    <option selected>Select Option</option>
+                    <option>Modern</option>
+                    <option>Traditional</option>
+                </select>
+
+                <div class="quiz-actions">
+                    <button type="button" class="btn">Show Dress</button>
+                    <button type="button" class="btn">Show Jewellery</button>
+                    <button type="button" class="btn">Show Shoes</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li>Terms & Conditions</li>
+                    <li>Careers</li>
+                    <li>FAQ's</li>
+                    <li>Contact Us</li>
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>See More</h4>
+                <ul>
+                    <li>Our Products</li>
+                    <li>Make to Order</li>
+                    <li>My Account</li>
+                    <li>Blog</li>
+                    <li>Log Out</li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact">
+                <h4>Contact</h4>
+                <p>+92 3131888662</p>
+                <p>+92 3140701087</p><br>
+                <h4>Email:</h4>
+                <p>i253188@isb.nu.edu.pk</p>
+                <p>i253067@isb.nu.edu.pk</p>
+                <div class="socials"></div>
+            </div>
+        </div>
+    </footer>
 </body>
+
+</html>
