@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentique - About Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        /* Typography Helpers */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            font-size: 12px;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        .search-container {
+            background: #fff;
+            border-radius: 20px;
+            padding: 5px 15px;
+            display: flex;
+            align-items: center;
+            width: 300px;
+        }
+
+        .search-container input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 12px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 11px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #aaa;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 60vh;
+            /* Using a linear gradient to darken the image slightly for text readability */
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Intro Section */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .arched-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 150px 150px 40px 40px; /* Creates the arched shape */
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .intro-text-col {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .grey-box {
+            background-color: #E6E6E6;
+            padding: 30px;
+            border-radius: 5px;
+            text-align: justify;
+            font-size: 0.95rem;
+        }
+
+        .mission-bubble {
+            background-color: #E29B9B; /* The pink color */
+            padding: 40px 50px;
+            border-radius: 50%; /* Makes it oval */
+            text-align: center;
+            color: #000;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .mission-bubble h2 {
+            font-family: 'Great Vibes', cursive; /* Script font */
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .mission-bubble p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Working Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .script-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .values-text p {
+            text-align: justify;
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+        }
+
+        .quote-box {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .values-image-col img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #FF9E9E; /* Footer pink */
+            padding: 30px 50px;
+            color: #000;
+        }
+
+        .features-bar {
+            display: flex;
+            justify-content: space-around;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .feature i {
+            font-size: 1.5rem;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1.5fr;
+            gap: 20px;
+        }
+
+        .footer-links h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 5px;
+        }
+
+        .footer-links ul li a {
+            text-decoration: none;
+            color: #000; 
+            font-size: 0.8rem;
+        }
+
+        .contact-col {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+        }
+
+        .contact-item p {
+            font-size: 0.8rem;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icons i {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .intro-grid, .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .arched-image {
+                height: 300px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .features-bar {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .contact-item {
+                justify-content: center;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">RENTIQUE</div>
+        <div class="search-container">
+            <input type="text" placeholder="Search here...">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#"><i class="fa-solid fa-user"></i> Log In / Sign Up</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Shopping Cart <i class="fa-solid fa-cart-shopping"></i></a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#" class="active">About Us</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-overlay">
+            <h1>About Us</h1>
+            <p>A Brief Overview Of Our Magic</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <section class="intro-grid">
+            <div class="intro-image-col">
+                <img src="https://images.unsplash.com/photo-1596249272370-76c227df7a32?q=80&w=800&auto=format&fit=crop" alt="Bridal Jewelry" class="arched-image">
+            </div>
+            
+            <div class="intro-text-col">
+                <div class="grey-box">
+                    <p>Welcome to <strong>RENTIQUE</strong>, your premier destination where bridal elegance meets effortless convenience. We specialize in offering an exquisite, curated collection of premium bridal suits and stunning jewelry for rent, designed to make every bride shine without the hefty price tag.</p>
+                </div>
+
+                <div class="mission-bubble">
+                    <h2>Our Mission</h2>
+                    <p>Our mission is to give you a luxurious, magazine-ready look for your special day, featuring everything from intricate designer wear to sparkling statement accessory sets. With <strong>RENTIQUE</strong>, you can rent smart, look flawless, and make your wedding day vision a beautiful reality with our affordable, high-quality rentals.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="values-grid">
+            <div class="values-text">
+                <h2 class="script-title">Our Working Values</h2>
+                <p>At Spectrum, Our Commitment To Excellence Is Guided By A Passion For Perfection, A Customer-Centric Approach, And A Celebration Of Diversity In Design. We Blend Timeless Elegance With Innovative Styles, Ensuring That Every Piece Reflects Our Dedication To Enduring Quality. Our Transparent Integrity Forms The Foundation Of Trust, Creating An Immersive Experience That Goes Beyond Clothing And Resonates With The Values Of Excellence And Individuality. As We Say, "We Are The House Of Happiness"</p>
+                
+                <div class="quote-box">
+                    “Customer’s Service Is Not A Department, It’s Everyone’s Job.”
+                </div>
+            </div>
+            
+            <div class="values-image-col">
+                <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=800&auto=format&fit=crop" alt="Bridal Dress">
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="features-bar">
+            <div class="feature">
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Express shipping all around</span>
+            </div>
+            <div class="feature">
+                <i class="fa-regular fa-user"></i>
+                <span>99.2% Customers satisfied</span>
+            </div>
+            <div class="feature">
+                <i class="fa-solid fa-lock"></i>
+                <span>100% Secure payments</span>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <div class="col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">FAQ's</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>See More</h3>
+                <ul>
+                    <li><a href="#">Our Products</a></li>
+                    <li><a href="#">Make an Order</a></li>
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Log Out</a></li>
+                </ul>
+            </div>
+            <div class="col contact-col">
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <div>
+                        <p>+92 3123 456789</p>
+                        <p>+92 3144 758347</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <p>info@rentique.pk</p>
+                        <p>support@rentique.pk</p>
+                    </div>
+                </div>
+                <div class="social-icons">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

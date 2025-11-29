@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Checkout Page</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+        .header {
+            background-color: black;
+            color: white;
+            padding: 15px 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+            letter-spacing: 1px;
+            gap: 10px;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            margin-right: 20px;
+        }
+        .logo img {
+            height: 50px;
+        }
+        .search-box {
+            background-color: white;
+            border-radius: 20px;
+            padding: 5px 15px;
+            width: 200px;
+            display: flex;
+            align-items: center;
+        }
+        .search-box input {
+            border: none;
+            outline: none;
+            width: 100%;
+        }
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+        }
+        .menu a:hover {
+            color: white;
+        }
+        .steps {
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+            gap: 15px;
+            align-items: center;
+        }
+        .step {
+            background-color: lightgray;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            color: black;
+        }
+        .active {
+            background-color: #d0d0d0;
+            border: 3px solid black;
+        }
+        .main-content {
+            margin: 0 100px;
+            display: flex;
+            gap: 50px;
+            padding-bottom: 50px;
+        }
+        .left-side {
+            width: 60%;
+        }
+        .left-side h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .two-columns {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        .field {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        .field label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        .field input, .field textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .field textarea {
+            height: 100px;
+            resize: none;
+        }
+        .right-side {
+            width: 35%;
+            border: 2px solid lightgray;
+            padding: 25px;
+            height: fit-content;
+        }
+        .right-side h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+        table th {
+            text-align: left;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        table th:last-child {
+            text-align: right;
+        }
+        table td {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        table td:last-child {
+            text-align: right;
+        }
+        .total-row td {
+            font-weight: bold;
+            font-size: 18px;
+            border-bottom: 2px solid #ccc;
+        }
+        .payment-method {
+            margin-bottom: 20px;
+        }
+        .payment-option {
+            margin-bottom: 10px;
+        }
+        .payment-details {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            font-size: 13px;
+            color: #555;
+        }
+        .checkbox-section {
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+        button {
+            background-color: #ffb6b6;
+            color: white;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+        .privacy-note {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.4;
+        }
+        .site-footer {
+            background-color:pink;
+            color: black;
+            padding: 40px 100px;
+            margin-top: 50px;
+        }
+        .footer-grid {
+            display: flex;
+            gap: 80px;
+        }
+        .footer-col {
+            flex: 1;
+        }
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-col ul li {
+            margin-bottom: 10px;
+            color: black;
+            cursor: pointer;
+        }
+        .footer-col ul li:hover {
+            color: black;
+        }
+        .footer-col.contact p {
+            margin: 10px 0;
+            color:black;
+        }
+        .socials {
+            margin-top: 20px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- top black header -->
+    <div class="header">
+        <div class="header-left">
+            <div class="logo">
+                <a href="#" class="header">
+                <img src="logo.jpg" alt="Logo"></a>Rentique
+            </div>
+            <div class="search-box">
+                <span style="color: grey; margin-right: 5px;"></span>
+                <input type="text" placeholder="search for items">
+                
+            </div>
+        </div>
+        
+        <div class="menu">
+            <a href="#">Log In/Sign Up</a>
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">Shopping Cart 🛒</a>
+            <a href="#">Support</a>
+            <a href="#">About Us</a>
+        </div>
+    </div>
+
+    <!-- three steps -->
+    <div class="steps">
+        <div class="step">1. SHOPPING CART</div>
+        <div style="font-size: 24px;">→</div>
+        <div class="step active">2. CHECKOUT DETAILS</div>
+        <div style="font-size: 24px;">→</div>
+        <div class="step">3. ORDER COMPLETE</div>
+    </div>
+
+    <!-- main part with form and order summary -->
+    <div class="main-content">
+        
+        <!-- left: billing form -->
+        <div class="left-side">
+            <h2>Billing details</h2>
+            
+            <form>
+                <div class="two-columns">
+                    <div class="field">
+                        <label>First name *</label>
+                        <input type="text">
+                    </div>
+                    <div class="field">
+                        <label>Last name *</label>
+                        <input type="text">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>Company name (optional)</label>
+                    <input type="text">
+                </div>
+
+                <div class="field">
+                    <label>Country / Region *</label>
+                    <input type="text">
+                </div>
+
+                <div class="field">
+                    <label>Street address *</label>
+                    <input type="text">
+                </div>
+
+                <div class="field">
+                    <label>Town / City *</label>
+                    <input type="text">
+                </div>
+
+                <div class="field">
+                    <label>Postcode / ZIP *</label>
+                    <input type="text">
+                </div>
+
+                <div class="field">
+                    <label>Phone *</label>
+                    <input type="tel">
+                </div>
+
+                <div class="field">
+                    <label>Email address *</label>
+                    <input type="email">
+                </div>
+
+                <div class="field">
+                    <label>Order notes (optional)</label>
+                    <textarea></textarea>
+                </div>
+            </form>
+        </div>
+
+        <!-- right: order summary box -->
+        <div class="right-side">
+            <h2>Your order</h2>
+            
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Subtotal</th>
+                </tr>
+                <tr>
+                    <td>Kaif By MNR For Sell | SP160 × 1</td>
+                    <td>Rs 550,000</td>
+                </tr>
+                <tr>
+                    <td>Subtotal</td>
+                    <td>Rs 550,000</td>
+                </tr>
+                <tr>
+                    <td><b>Shipping</b></td>
+                    <td><b>Flat rate: Rs 500</b></td>
+                </tr>
+                <tr class="total-row">
+                    <td>Total</td>
+                    <td>Rs 550,500</td>
+                </tr>
+            </table>
+
+            <div class="payment-method">
+                <div class="payment-option">
+                    <input type="radio" name="payment" id="bank" checked>
+                    <label for="bank" style="display:inline;"><b>Direct bank transfer</b></label>
+                    <div class="payment-details">
+                        Make your payment directly into our bank account. Your order will not be shipped until the funds have cleared in our account.
+                    </div>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" name="payment" id="cod">
+                    <label for="cod" style="display:inline;"><b>Cash on delivery</b></label>
+                    <label style="display:inline; margin-left: 10px;">
+                         ○ Debit Card OR ○ Credit Card
+                    </label>
+                </div>
+            </div>
+
+            <div class="checkbox-section">
+                <input type="checkbox" id="agree">
+                <label for="agree" style="display:inline;">I have read and agree to the website terms and conditions *</label>
+            </div>
+
+            <button>PLACE ORDER</button>
+
+            <p class="privacy-note">
+                Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li>Terms & Conditions</li>
+                    <li>Careers</li>
+                    <li>FAQ's</li>
+                    <li>Contact Us</li>
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>See More</h4>
+                <ul>
+                    <li>Our Products</li>
+                    <li>Make to Order</li>
+                    <li>My Account</li>
+                    <li>Blog</li>
+                    <li>Log Out</li>
+                </ul>
+            </div>
+            <div class="footer-col contact">
+                <h4>Contact Us</h4>
+                <p>+92 3140701087</p>
+                <p>+92 3140701087</p>
+                <h4>Email:</h4>
+                <p>i253188@isb.nu.edu.pk</p>
+                <p>i253067@isb.nu.edu.pk</p>
+               
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
