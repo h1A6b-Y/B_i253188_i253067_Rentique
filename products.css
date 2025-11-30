@@ -1,0 +1,202 @@
+/* Basic reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #241212;
+  background: #b98f8f; /* page tint similar to your screenshot */
+  line-height: 1.3;
+}
+
+/* container used site-wide */
+.container {
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------
+   Header (from your snippet)
+   -------------------------------------------- */
+.site-header {
+  background: #0e0e0e;
+  color: #fff;
+  padding: 12px 0;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.logo {
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+.site-search {
+  margin-left: 12px;
+  display: flex;
+  align-items: center;
+}
+.site-search input {
+  padding: 8px 10px;
+  background-image: url('images/search.png');
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 12px) center;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  min-width: 240px;
+}
+.main-nav {
+  margin-left: auto;
+  display: flex;
+  gap: 14px;
+}
+.main-nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* --------------------------------------------
+   Page top
+   -------------------------------------------- */
+.page-top {
+  padding: 18px 0;
+}
+.page-title {
+  font-size: 28px;
+  color: #241212;
+}
+
+/* --------------------------------------------
+   Products grid and cards
+   Simple hover effects only
+   -------------------------------------------- */
+.products-section {
+  padding: 10px 0 40px;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-top: 10px;
+}
+
+/* product card */
+.product-card {
+  background: rgba(213,170,170,0.7); /* light card tint */
+  padding: 14px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* subtle lift on hover for entire card */
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 30px rgba(0,0,0,0.12);
+}
+
+/* image */
+.product-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.product-card img:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 30px rgba(0,0,0,0.12);
+}
+
+/* text */
+.product-card h3 {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #241212;
+}
+.product-card .price {
+  margin-top: 6px;
+  color: #241212;
+  font-weight: 600;
+}
+.product-card .rating {
+  margin-top: 6px;
+  color: #241212;
+  font-size: 13px;
+}
+
+/* order button with hover */
+.order {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.25s ease, background-color 0.25s linear;
+}
+.order:hover {
+  transform: translateY(-4px);
+  background: #222;
+}
+
+/* --------------------------------------------
+   Footer (from your snippet)
+   -------------------------------------------- */
+.site-footer {
+  background: #f6b6b6;
+  padding: 28px 0;
+  margin-top: 36px;
+}
+.footer-grid {
+  display: flex;
+  gap: 30px;
+}
+.footer-col {
+  flex: 1;
+}
+.footer-col h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.footer-col ul {
+  list-style: none;
+}
+.footer-col ul li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* --------------------------------------------
+   Responsive (basic and simple)
+   -------------------------------------------- */
+@media (max-width: 1000px) {
+  .products-grid { grid-template-columns: repeat(3, 1fr); }
+  .site-search input { min-width: 160px; }
+}
+@media (max-width: 740px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+  .site-search input { min-width: 120px; }
+  .logo img { height: 34px; }
+}
+@media (max-width: 420px) {
+  .products-grid { grid-template-columns: 1fr; gap: 18px; }
+  .main-nav { display: none; } /* keep header simple on very small screens */
+  .site-search input { min-width: 100px; }
+}
