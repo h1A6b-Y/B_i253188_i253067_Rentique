@@ -1,0 +1,267 @@
+/* Simple reset */
+* { 
+  box-sizing: border-box;
+  margin: 0; 
+  padding: 0; 
+}
+html,body {
+  height: 100%; 
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #241212;
+  background: #f7d1d1;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.3;
+}
+
+/* basic centered container */
+.container {
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* header */
+.site-header {
+  background: #0e0e0e;
+  color: #fff;
+  padding: 12px 0;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Search area */
+.site-search {
+  margin-left: 12px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.site-search input {
+  padding: 8px 10px;
+  background-image: url('search.png');
+  border-radius: 20px;
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 12px) center;
+  border: none;
+  outline: none;
+  min-width: 240px;
+}
+
+/* Branding */
+.logo {
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+/* Navigation */
+.main-nav {
+  margin-left: auto;
+  display: flex;
+  gap: 14px;
+}
+.main-nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+}
+
+.main {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 22px 0 40px;
+}
+
+
+.left {
+  flex: 1;
+  min-width: 280px;
+}
+.left img {
+  width: 80%;
+  height: 720px;
+  object-fit: cover;
+  border-radius: 9px;
+  display: block;
+  transition: transform 0.5s ease-in-out;
+}
+.left img:hover {
+  transform: translateY(-6px);
+}
+
+/* right column (form card) */
+.right {
+  width: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* the grey inner box */
+.form-card {
+  width: 100%;
+  background: rgba(230, 216, 216, 0.95);
+  padding: 26px;
+  border-radius: 9px;
+  text-align: center;
+}
+
+/* headings inside the form */
+.form-card h2 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #222;
+  text-align: left;
+}
+.required {
+  color: #8b2b2b;
+  margin-left: 6px;
+  font-weight: 600;
+}
+
+/* input style */
+.input-field {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 2px solid #f7b6b6;
+  background: #fddcdc;
+  outline: none;
+  margin-bottom: 12px;
+  align-content: center;
+  display: block;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  font-size: 14px;
+}
+.input-field:focus,
+.input-field:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  border-color: #f0a6a6;
+}
+
+/* row with checkbox and forgot link */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+.chk input {
+  margin-right: 8px;
+  transform: translateY(2px);
+}
+.forgot {
+  color: #222;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+/* main action button */
+.btn {
+  display: inline-block;
+  width: 70%;
+  margin: 8px auto 12px;
+  padding: 10px 18px;
+  border-radius: 22px;
+  border: 2px solid #f7b6b6;
+  background: #f8b4b4;
+  color: #2b1010;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.35s ease, background-color 0.35s linear;
+}
+.btn:hover {
+  transform: translateY(-4px);
+  background: #f0a3a3;
+}
+
+/* OR separator block */
+.or {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  margin: 12px 0;
+}
+.or .line {
+  width: 56px;
+  height: 2px;
+}
+.or .or-text {
+  font-size: 12px;
+  color: #222;
+}
+
+/* social icons row */
+.socials {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin-top: 12px;
+}
+.social {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+.social:hover {
+  transform: translateY(-6px);
+}
+
+/* Footer wrapper */
+.site-footer {
+  background: #f6b6b6;
+  padding: 28px 0;
+  margin-top: 36px;
+}
+
+/* Footer layout */
+.footer-grid {
+  display: flex;
+  gap: 30px;
+}
+
+/* Columns */
+.footer-col {
+  flex: 1;
+}
+.footer-col h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.footer-col ul {
+  list-style: none;
+}
+.footer-col ul li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* simple footer text */
+.footer {
+  padding: 18px 0 60px;
+  font-size: 14px;
+  color: #241212;
+}
