@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shopping Cart - Rentique</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial;
+      background-color: white;
+    }
+
+    .container {
+      width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Header container */
+    .site-header {
+      background: #0e0e0e;
+      color: #fff;
+      padding: 12px 0;
+    }
+
+    /* Structural layout */
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* Branding */
+    .logo {
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: 1px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo img {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+
+    /* Search box */
+    .site-search {
+      margin-left: 12px;
+      display: flex;
+      align-items: center;
+    }
+    .site-search input {
+      padding: 8px 10px;
+      background-image: url(images/search.png);
+      background-size: 18px 18px;
+      background-repeat: no-repeat;
+      background-position: calc(100% - 12px) center;
+      border: none;
+      outline: none;
+      border-radius: 20px;
+      min-width: 240px;
+    }
+
+    /* Navigation menu */
+    .main-nav {
+      margin-left: auto;
+      display: flex;
+      gap: 14px;
+    }
+    .main-nav a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    /* steps at top */
+    .steps {
+      margin-top: 40px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .step {
+      display: inline-block;
+      background-color: #cccccc;
+      padding: 15px 40px;
+      border-radius: 25px;
+      margin: 0 10px;
+      font-size: 14px;
+    }
+
+    .arrow {
+      display: inline-block;
+      font-size: 24px;
+      margin: 0 5px;
+    }
+
+    /* main content area */
+    .main-content {
+      display: flex;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    /* left side with product */
+    .left-side {
+      width: 400px;
+    }
+
+    .product-image {
+      width: 100%;
+      height: auto;
+      border: 1px solid #ddd;
+    }
+
+    .product-name {
+      background-color: #ffb3b3;
+      padding: 10px;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    .quantity-box {
+      border: 2px solid #ff9999;
+      padding: 15px;
+      margin-top: 10px;
+    }
+
+    .quantity-box p {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .quantity-controls {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .quantity-controls button {
+      width: 30px;
+      height: 30px;
+      font-size: 18px;
+      background-color: #e0e0e0;
+      border: none;
+      cursor: pointer;
+    }
+
+    .quantity-controls span {
+      font-size: 18px;
+    }
+
+    /* right side */
+    .right-side {
+      flex: 1;
+    }
+
+    .cart-total-box {
+      background-color: #ffb3b3;
+      padding: 30px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+
+    .cart-total-box h2 {
+      margin-top: 0;
+      font-size: 20px;
+      border-bottom: 2px solid black;
+      padding-bottom: 10px;
+    }
+
+    .cart-row {
+      display: flex;
+      justify-content: space-between;
+      margin: 15px 0;
+      padding: 10px 0;
+      border-bottom: 1px solid black;
+    }
+
+    .cart-row-label {
+      font-size: 16px;
+    }
+
+    .cart-row-value {
+      font-size: 16px;
+    }
+
+    .shipping-note {
+      font-size: 13px;
+      margin-top: 5px;
+    }
+
+    .checkout-button {
+      width: 100%;
+      background-color: black;
+      color: white;
+      padding: 15px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .update-cart-btn {
+      background-color: #ffb3b3;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .remove-btn {
+      background-color: black;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .continue-shopping {
+      border: 2px solid #ff9999;
+      padding: 12px 30px;
+      background-color: white;
+      color: #ff6666;
+      font-size: 16px;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 15px;
+    }
+
+    .continue-shopping:before {
+      content: "← ";
+    }
+
+    /* Footer wrapper */
+    .site-footer {
+      background: #f6b6b6;
+      padding: 28px 0;
+      margin-top: 36px;
+    }
+
+    /* Footer layout */
+    .footer-grid {
+      display: flex;
+      gap: 30px;
+    }
+
+    /* Columns */
+    .footer-col {
+      flex: 1;
+    }
+    .footer-col h4 {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-col ul li {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="brand">Rentique</span>
+      </div>
+
+      <div class="site-search">
+        <input type="text" placeholder="search for items" />
+      </div>
+
+      <nav class="main-nav">
+        <a href="#">Log In/Sign Up</a>
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Shopping Cart</a>
+        <a href="#">Support</a>
+        <a href="#">About Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Steps -->
+  <div class="container">
+    <div class="steps">
+      <div class="step">1.SHOPPING CART</div>
+      <span class="arrow">→</span>
+      <div class="step">2.CHECKOUT DETAILS</div>
+      <span class="arrow">→</span>
+      <div class="step">3.ORDER COMPLETE</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Left Side -->
+      <div class="left-side">
+        <img src="images/bridaldress.jpeg" alt="Product" class="product-image">
+       
+        <div class="product-name">
+          Kaif by MNR SP160
+        </div>
+
+        <div class="quantity-box">
+          <p>Quantity</p>
+          <div class="quantity-controls">
+            <button>-</button>
+            <span>1</span>
+            <button>+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side -->
+      <div class="right-side">
+        <div class="cart-total-box">
+          <h2>CART TOTAL:</h2>
+         
+          <div class="cart-row">
+            <div class="cart-row-label">Subtotal</div>
+            <div class="cart-row-value">Rs 75,000</div>
+          </div>
+
+          <div class="cart-row">
+            <div class="cart-row-label">Shipping</div>
+            <div class="cart-row-value">
+              <div>Shipping options will</div>
+              <div class="shipping-note">be updated during checkout</div>
+            </div>
+          </div>
+
+          <div class="cart-row">
+            <div class="cart-row-label">Total</div>
+            <div class="cart-row-value">Rs 75,000</div>
+          </div>
+
+          <button class="checkout-button">PROCEED TO CHECKOUT</button>
+        </div>
+
+        <div class="button-row">
+          <button class="update-cart-btn">UPDATE CART</button>
+          <button class="remove-btn">Remove</button>
+        </div>
+
+        <button class="continue-shopping">CONTINUE SHOPPING</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li>Terms & Conditions</li>
+          <li>Careers</li>
+          <li>FAQ's</li>
+          <li>Contact Us</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>See More</h4>
+        <ul>
+          <li>Our Products</li>
+          <li>Make to Order</li>
+          <li>My Account</li>
+          <li>Blog</li>
+          <li>Log Out</li>
+        </ul>
+      </div>
+
+      <div class="footer-col contact">
+        <h4>Contact</h4>
+        <p>+92 3131888662</p>
+        <p>+92 3140701087</p>
+        <h4>Email:</h4>
+        <p>i253188@isb.nu.edu.pk</p>
+        <p>i253067@isb.nu.edu.pk</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
