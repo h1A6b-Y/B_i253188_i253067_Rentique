@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rentique — Contact Us</title>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: black;
+      background: #fff; 
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    
+
+    .site-header {
+      background: #0e0e0e;
+      color: #fff;
+      padding: 12px 0;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: 1px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo img {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+
+    .site-search {
+      margin-left: 12px;
+      display: flex;
+      align-items: center;
+    }
+    .site-search input {
+      padding: 8px 10px;
+      background-image: url('images/search.png');
+      background-size: 18px 18px;
+      background-repeat: no-repeat;
+      background-position: calc(100% - 12px) center;
+      border: none;
+      outline: none;
+      border-radius: 20px;
+      min-width: 240px;
+    }
+
+    .main-nav {
+      margin-left: auto;
+      display: flex;
+      gap: 14px;
+    }
+    .main-nav a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .hero-section {
+      background:url(images/Backgroundpic.png);
+      background-repeat: no-repeat;
+      background-size:auto;      
+      background-position: left;
+      padding:200px 0;
+      text-align:left;
+    }
+    .hero-section h1 {
+      font-size: 48px;
+      color:white;
+      margin-bottom: 10px;
+    }
+    .hero-section p {
+      font-size: 18px;
+      color:white;
+    }
+
+    /* ---------------------- CONTACT SECTION ---------------------- */
+    .contact-content {
+      padding: 60px 0;
+      display: flex;
+      gap: 60px;
+    }
+
+    .contact-left { flex: 1; }
+    .contact-left h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #241212;
+    }
+    .contact-left p {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+      color: #444;
+    }
+
+    /*  */
+    .socials {
+  display: flex;
+  gap:60px;
+  justify-content: center;
+  margin-top: 15px;
+}
+.social {
+  width: 70px;
+  height: 70px;
+  border-radius: 80%;
+  object-fit: cover;
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+.social:hover {
+  transform: translateY(-6px);
+}
+
+    .contact-info {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 100px;
+    }
+    .info-group { flex: 1; }
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+    .icon { font-size: 32px; }
+    .info-text p {
+      font-size: 16px;
+      font-weight: 600;
+      color: #241212;
+      margin: 45px;
+    }
+
+    .contact-right { flex: 1; }
+    .contact-right h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: #241212;
+    }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #241212;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.25s ease;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #b98f8f;
+    }
+    .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      padding: 12px 32px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.25s ease, background-color 0.25s ease;
+    }
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      background: #222;
+    }
+
+    /* ---------------------- NEW FOOTER (YOUR PROVIDED CODE) ---------------------- */
+
+    .site-footer {
+      background: #f6b6b6;
+      padding: 28px 0;
+      margin-top: 36px;
+    }
+
+    .footer-grid {
+      display: flex;
+      gap: 30px;
+    }
+
+    .footer-col { flex: 1; }
+    .footer-col h4 {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ---------------------- HEADER ---------------------- -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <div class="logo">
+        <img src="images/logo.png" alt="Rentique Logo">
+        <span>Rentique</span>
+      </div>
+
+      <div class="site-search">
+        <input type="text" placeholder="search for items">
+      </div>
+
+      <nav class="main-nav">
+        <a href="#">Log In/Sign Up</a>
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Shopping Cart</a>
+        <a href="#">Support</a>
+        <a href="#">About Us</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ---------------------- HERO ---------------------- -->
+  <section class="hero-section">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>Reach us with convenience</p>
+    </div>
+  </section>
+
+  <!-- ---------------------- CONTENT ---------------------- -->
+  <div class="container contact-content">
+
+    <div class="contact-left">
+      <h2>Get In Touch</h2>
+      <p>Our team is all devoted to serve you. Visit us or click any of our social media links below for instant touch</p>
+
+     
+      
+        <div class="socials">
+          <img src="images/google.png" alt="Google" class="social">
+          <img src="images/facebook.png" alt="Facebook" class="social">
+          <img src="images/instagram.png" alt="Instagram" class="social">
+        </div>
+
+      <div class="contact-info">
+        <div class="info-group">
+          <div class="info-item">
+            <div class="icon">📞
+            </div>
+            <p>+92 3131888662</p>
+        </div>
+          <div class="info-item"><div class="icon">📞</div><p>+92 3140701087</p></div>
+        </div>
+        <div class="info-group">
+          <div class="info-item"><div class="icon">✉️</div><p>i253188@isb.nu.edu.pk</p></div>
+          <div class="info-item"><div class="icon">✉️</div><p>i253067@isb.nu.edu.pk</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-right">
+      <h2>Ask a question</h2>
+      <form>
+        <div class="form-group">
+          <label>Your Name (required)</label>
+          <input type="text" required>
+        </div>
+        <div class="form-group">
+          <label>Your Email (required)</label>
+          <input type="email" required>
+        </div>
+        <div class="form-group">
+          <label>Subject (optional)</label>
+          <input type="text">
+        </div>
+        <div class="form-group">
+          <label>Your Message (required)</label>
+          <textarea required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- ---------------------- FOOTER ---------------------- -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li>Terms & Conditions</li>
+          <li>Careers</li>
+          <li>FAQ's</li>
+          <li>Contact Us</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>See More</h4>
+        <ul>
+          <li>Our Products</li>
+          <li>Make to Order</li>
+          <li>My Account</li>
+          <li>Blog</li>
+          <li>Log Out</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>+92 3131888662</p>
+        <p>+92 3140701087</p>
+        <h4>Email:</h4>
+        <p>i253188@isb.nu.edu.pk</p>
+        <p>i253067@isb.nu.edu.pk</p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
