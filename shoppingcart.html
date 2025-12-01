@@ -292,12 +292,12 @@
       </div>
 
       <nav class="main-nav">
-        <a href="#">Log In/Sign Up</a>
-        <a href="#">Home</a>
-        <a href="#">Products</a>
-        <a href="#">Shopping Cart</a>
-        <a href="#">Support</a>
-        <a href="#">About Us</a>
+        <a href="login.html">Log In/Sign Up</a>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="shoppingcart.html">Shopping Cart</a>
+        <a href="contactus.html">Support</a>
+        <a href="Aboutus.html">About Us</a>
       </nav>
     </div>
   </header>
@@ -354,16 +354,20 @@
             <div class="cart-row-label">Total</div>
             <div class="cart-row-value">Rs 75,000</div>
           </div>
-
+          <a href="checkout.html">  
           <button class="checkout-button">PROCEED TO CHECKOUT</button>
+          </a>
         </div>
 
         <div class="button-row">
           <button class="update-cart-btn">UPDATE CART</button>
-          <button class="remove-btn">Remove</button>
+          <a href="products.html"> 
+          <button onclick="removeCart()" class="remove-btn">Remove</button>
+          </a>
         </div>
-
+        <a href="products.html"> 
         <button class="continue-shopping">CONTINUE SHOPPING</button>
+        </a>
       </div>
     </div>
   </div>
@@ -403,6 +407,14 @@
       </div>
     </div>
   </footer>
+  <script>
+    function removeCart()
+    {
+      alert("Item removed from cart!");
+      console.log("Item removed from cart");
+    }
+    
+  </script>
 
 </body>
 </html>

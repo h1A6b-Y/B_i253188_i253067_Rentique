@@ -1,8 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Product — Rentique</title>
   <link rel="stylesheet" href="product-detail.css">
 </head>
@@ -12,7 +10,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <div class="logo">
-        <a href="#" class="logo-link">
+        <a href="index.html" class="logo-link">
           <img src="images/logo.png" alt="Rentique logo" />
         </a>
         <span class="brand">Rentique</span>
@@ -26,9 +24,9 @@
         <a href="index.html">Home</a>
         <a href="login.html">Log In/Sign Up</a>
         <a href="products.html">Products</a>
-        <a href="#">Shopping Cart</a>
-        <a href="#">Support</a>
-        <a href="aboutus.html">About Us</a>
+        <a href="shoppingcart.html">Shopping Cart</a>
+        <a href="contactus.html">Support</a>
+        <a href="Aboutus.html">About Us</a>
       </nav>
     </div>
   </header>
@@ -60,15 +58,18 @@
         <div class="availability">Availability : <span class="in-stock">In Stock</span></div>
 
         <div class="rating">★ 4.8/5</div>
-
-        <button type="button" class="btn add-cart">Add to Cart</button>
+        <a href="shoppingcart.html">  
+        <button onclick="addToCart()" type="button" class="btn add-cart">Add to Cart</button>
+        </a>
       </form>
 
       <div class="tabs">
         <span class="tab active">Description</span>
         <span class="tab">Reviews</span>
         <span class="tab">Size: Small to Medium</span>
+        <a href="products.html">  
         <button class="btn related">Related Items</button>
+        </a>
       </div>
     </div>
   </main>
@@ -109,6 +110,13 @@
       </div>
     </div>
   </footer>
+  <script>
+    function addToCart() 
+    {
+     alert("Item added to cart successfully!");
+     console.log("Item added to cart successfully!");
+    }
 
+  </script>
 </body>
 </html>

@@ -43,7 +43,7 @@ body {
 }
 .site-search input {
   padding: 8px 10px;
-  background-image: url('search.png');
+  background-image: url('images/search.png');
   border-radius: 20px;
   background-size: 18px 18px;
   background-repeat: no-repeat;
